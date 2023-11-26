@@ -5,14 +5,21 @@ import { auth } from "../utils/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const dispatch = useDispatch();
 
   const email = useRef(null);
   const password = useRef(null);
+  const name = useRef(null);
+  const navigate = useNavigate();
 
   const signToggle = () => {
     setSignIn(!signIn);
@@ -21,6 +28,8 @@ const Login = () => {
   const handleSignInBtn = () => {
     const message = checkValidate(email.current.value, password.current.value);
     setErrorMessage(message);
+    // const nameError = !signIn && checkValidateName(name.current.value);
+    // setErrorMessage(nameError);
     if (message) return;
     if (!signIn) {
       // Sign Up Logic
@@ -34,6 +43,18 @@ const Login = () => {
           // Signed up
           const user = userCredential.user;
           console.log(user);
+
+          updateProfile(user, {
+            displayName: name.current.value,
+          })
+            .then(() => {
+              navigate("/browse");
+              const { uid, email, displayName } = auth.currentUser;
+              dispatch(addUser({ uid, email, displayName }));
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -51,6 +72,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -74,6 +96,7 @@ const Login = () => {
         </h1>
         {!signIn && (
           <input
+            ref={name}
             type="text"
             placeholder="Full Name"
             className="p-2 my-2 w-full rounded-sm bg-neutral-700"
