@@ -8,4 +8,6 @@
 - Configured Firebase and Deployed
 - Authenticated using Firebase API's
 - Configured Redux store for user management
--
+- Implemented TMDB API's
+- Created custom hooks - useNowPlayingMovies, useTrailerVideo
+- Created VideoBackground using Youtube Embedded video
