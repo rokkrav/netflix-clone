@@ -11,3 +11,7 @@
 - Implemented TMDB API's
 - Created custom hooks - useNowPlayingMovies, useTrailerVideo
 - Created VideoBackground using Youtube Embedded video
+- Created MovieList, MovieCard components
+- Created custom hooks - usePopularMovies, useTopRatedMovies, useUpcomingMovies
+- Created GPT Search page with Search bar
+- Multi-Language feature in GPT Search
