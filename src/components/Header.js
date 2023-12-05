@@ -71,13 +71,17 @@ const Header = () => {
           >
             {showGptSearch ? "Home" : "Search"}
           </button>
-          <img className="w-8 h-8" src={USER_AVATAR} alt="user-logo" />
-          <button
-            className="text-white  text-xs bg-gray-900 w-24 h-8 border rounded-lg mx-2 px-1"
-            onClick={handleSignOutBtn}
-          >
-            Sign Out
-          </button>
+          {!showGptSearch && (
+            <>
+              <img className="w-8 h-8" src={USER_AVATAR} alt="user-logo" />
+              <button
+                className="text-white  text-xs bg-gray-900 w-24 h-8 border rounded-lg mx-2 px-1"
+                onClick={handleSignOutBtn}
+              >
+                Sign Out
+              </button>
+            </>
+          )}
         </div>
       )}
     </div>
