@@ -17,3 +17,4 @@
 - Multi-Language feature in Search Page
 - Added env variables
 - Memoised the components with API's
+- Implemented responsive UI
