@@ -13,5 +13,7 @@
 - Created VideoBackground using Youtube Embedded video
 - Created MovieList, MovieCard components
 - Created custom hooks - usePopularMovies, useTopRatedMovies, useUpcomingMovies
-- Created GPT Search page with Search bar
-- Multi-Language feature in GPT Search
+- Created Search page
+- Multi-Language feature in Search Page
+- Added env variables
+- Memoised the components with API's

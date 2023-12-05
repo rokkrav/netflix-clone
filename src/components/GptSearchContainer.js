@@ -4,7 +4,7 @@ import GptSearchMoviesContainer from "./GptSearchMoviesContainer";
 
 const GptSearchContainer = () => {
   return (
-    <div className="w-screen bg-black">
+    <div className=" bg-black h-screen">
       <GptSearchBar />
       <GptSearchMoviesContainer />
     </div>

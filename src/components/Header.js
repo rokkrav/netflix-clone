@@ -66,14 +66,14 @@ const Header = () => {
             </select>
           )}
           <button
-            className="text-white text-xs bg-gray-900 w-32 h-8 border rounded-lg mx-2 px-1"
+            className="text-white text-xs bg-gray-900 w-20 h-8 border rounded-lg mx-2 px-1"
             onClick={handleGptSearchBtn}
           >
-            {showGptSearch ? "Home" : "GPT Search"}
+            {showGptSearch ? "Home" : "Search"}
           </button>
           <img className="w-8 h-8" src={USER_AVATAR} alt="user-logo" />
           <button
-            className="text-white  text-xs bg-gray-900 w-16 h-8 border rounded-lg mx-2 px-1"
+            className="text-white  text-xs bg-gray-900 w-24 h-8 border rounded-lg mx-2 px-1"
             onClick={handleSignOutBtn}
           >
             Sign Out
